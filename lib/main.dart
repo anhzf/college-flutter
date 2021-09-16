@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 void main() => runApp(
       MaterialApp(
         home: Scaffold(
+          appBar: AppBar(
+            title: Text('K3519010 - ListView'),
+            backgroundColor: Colors.grey.shade700,
+          ),
           body: MyApp(),
-          backgroundColor: Colors.grey[900],
+          backgroundColor: Colors.grey.shade900,
         ),
       ),
     );
