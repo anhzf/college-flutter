@@ -4,31 +4,60 @@ void main() => runApp(
       MaterialApp(
         home: Scaffold(
           body: MyApp(),
-          backgroundColor: Color.fromARGB(0, 0, 0, 200),
+          backgroundColor: Colors.grey[900],
         ),
-        color: Colors.white,
       ),
     );
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext ctx) {
-    return Center(
-      child: ElevatedButton(
-        child: Text('Klik'),
-        onPressed: () => showDialog<String>(
-          context: ctx,
-          builder: (BuildContext ctx) => AlertDialog(
-            content: Text('asdadasd'),
-            actions: [
-              TextButton(
-                child: Text('Tutup'),
-                onPressed: () => Navigator.of(ctx).pop(),
+    return MyList();
+  }
+}
+
+class MyList extends StatefulWidget {
+  @override
+  _MyListState createState() => _MyListState();
+}
+
+class _MyListState extends State<MyList> {
+  var myList = ['asdas'];
+
+  @override
+  Widget build(BuildContext ctx) {
+    return ListView(
+      children: [
+        ...myList.asMap().entries.map((e) => ListTile(
+              tileColor: Colors.white,
+              title: Text('${e.key} - ${e.value} ${e.hashCode}'),
+              trailing: TextButton(
+                child: Icon(
+                  Icons.close,
+                  color: Colors.grey[300],
+                ),
+                onPressed: () => deleteItem(e.key),
               ),
-            ],
-          ),
+            )),
+        ListTile(
+          leading: Icon(Icons.add),
+          tileColor: Colors.grey[50],
+          title: Text('Tambah item'),
+          onTap: addItem,
         ),
-      ),
+      ],
     );
+  }
+
+  void addItem() {
+    setState(() {
+      myList.add('asdasdasd');
+    });
+  }
+
+  void deleteItem(int i) {
+    setState(() {
+      myList.removeAt(i);
+    });
   }
 }
