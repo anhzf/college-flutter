@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 void main() => runApp(
       MaterialApp(
         home: Scaffold(
+          appBar: AppBar(
+            title: Text('K3519010 - Custom Font'),
+            backgroundColor: Colors.grey.shade700,
+          ),
           body: MyApp(),
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.grey.shade900,
         ),
-        color: Colors.white,
       ),
     );
 
