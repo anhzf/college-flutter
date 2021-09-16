@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 void main() => runApp(
       MaterialApp(
         home: Scaffold(
+          appBar: AppBar(
+            title: Text('K3519010 - Image Widget'),
+            backgroundColor: Colors.grey.shade700,
+          ),
           body: MyApp(),
-          backgroundColor: Color.fromARGB(0, 0, 0, 200),
+          backgroundColor: Colors.grey.shade900,
         ),
         color: Colors.white,
       ),
@@ -13,21 +17,11 @@ void main() => runApp(
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext ctx) {
-    return Center(
-      child: ElevatedButton(
-        child: Text('Klik'),
-        onPressed: () => showDialog<String>(
-          context: ctx,
-          builder: (BuildContext ctx) => AlertDialog(
-            content: Text('asdadasd'),
-            actions: [
-              TextButton(
-                child: Text('Tutup'),
-                onPressed: () => Navigator.of(ctx).pop(),
-              ),
-            ],
-          ),
-        ),
+    return Container(
+      alignment: Alignment.center,
+      child: Image(
+        image: NetworkImage('https://source.unsplash.com/random/500x500'),
+        fit: BoxFit.cover,
       ),
     );
   }
