@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 void main() => runApp(
       MaterialApp(
         home: Scaffold(
+          appBar: AppBar(
+            title: Text('K3519010 - Event Handling'),
+            backgroundColor: Colors.grey.shade700,
+          ),
           body: MyApp(),
-          backgroundColor: Color.fromARGB(0, 0, 0, 200),
+          backgroundColor: Colors.grey.shade900,
         ),
         color: Colors.white,
       ),
