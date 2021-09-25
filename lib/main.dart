@@ -1,38 +1,14 @@
 import 'package:flutter/material.dart';
+import '/pages/Login.dart';
 
-void main() => runApp(
-      MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('K3519010 - Project Name'),
-            backgroundColor: Colors.grey.shade700,
-          ),
-          body: MyApp(),
-          backgroundColor: Colors.grey.shade900,
-        ),
-        color: Colors.white,
-      ),
-    );
+void main() => runApp(App());
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
-  Widget build(BuildContext ctx) {
-    return Center(
-      child: ElevatedButton(
-        child: Text('Klik'),
-        onPressed: () => showDialog<String>(
-          context: ctx,
-          builder: (BuildContext ctx) => AlertDialog(
-            content: Text('asdadasd'),
-            actions: [
-              TextButton(
-                child: Text('Tutup'),
-                onPressed: () => Navigator.of(ctx).pop(),
-              ),
-            ],
-          ),
-        ),
-      ),
+  Widget build(ctx) {
+    return MaterialApp(
+      home: PageLogin(),
+      color: Colors.white,
     );
   }
 }
