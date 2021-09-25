@@ -4,7 +4,7 @@ void main() => runApp(
       MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: Text('K3519010 - Project Name'),
+            title: Text('K3519010 - Draggable Widget'),
             backgroundColor: Colors.grey.shade700,
           ),
           body: MyApp(),
