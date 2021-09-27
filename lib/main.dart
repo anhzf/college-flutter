@@ -4,7 +4,7 @@ void main() => runApp(
       MaterialApp(
         home: Scaffold(
           appBar: AppBar(
-            title: Text('K3519010 - TextField Widget'),
+            title: Text('K3519010 - Custom TextField Widget'),
             backgroundColor: Colors.grey.shade700,
           ),
           body: MyApp(),
@@ -37,6 +37,13 @@ class _MyAppState extends State<MyApp> {
               decoration: InputDecoration(
                 labelText: 'First Name',
                 labelStyle: TextStyle(color: Colors.white70),
+                filled: true,
+                fillColor: Colors.grey.shade500.withOpacity(.5),
+                prefixIcon: Icon(Icons.person),
+                hintText: 'Nama Depan',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
               onChanged: (v) => setState(() {}),
             ),
@@ -49,6 +56,13 @@ class _MyAppState extends State<MyApp> {
               decoration: InputDecoration(
                 labelText: 'Last Name',
                 labelStyle: TextStyle(color: Colors.white70),
+                filled: true,
+                fillColor: Colors.grey.shade500.withOpacity(.5),
+                prefixIcon: Icon(Icons.person),
+                hintText: 'Nama Depan',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
               onChanged: (v) => setState(() {}),
             ),
@@ -62,6 +76,13 @@ class _MyAppState extends State<MyApp> {
               decoration: InputDecoration(
                 labelText: 'Password',
                 labelStyle: TextStyle(color: Colors.white70),
+                filled: true,
+                fillColor: Colors.grey.shade500.withOpacity(.5),
+                prefixIcon: Icon(Icons.password),
+                hintText: 'Nama Depan',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
             ),
           ),
