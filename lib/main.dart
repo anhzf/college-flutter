@@ -2,37 +2,46 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(
       MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('K3519010 - Project Name'),
-            backgroundColor: Colors.grey.shade700,
-          ),
-          body: MyApp(),
-          backgroundColor: Colors.grey.shade900,
-        ),
-        color: Colors.white,
-      ),
-    );
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext ctx) {
-    return Center(
-      child: ElevatedButton(
-        child: Text('Klik'),
-        onPressed: () => showDialog<String>(
-          context: ctx,
-          builder: (BuildContext ctx) => AlertDialog(
-            content: Text('asdadasd'),
-            actions: [
-              TextButton(
-                child: Text('Tutup'),
-                onPressed: () => Navigator.of(ctx).pop(),
+        home: DefaultTabController(
+          length: 4,
+          child: Scaffold(
+            appBar: AppBar(
+              title: Text('K3519010 - AppBar with Tabs'),
+              bottom: TabBar(
+                tabs: [
+                  Tab(
+                    icon: Icon(Icons.home_filled),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.search),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.favorite),
+                  ),
+                  Tab(
+                    icon: Icon(Icons.person),
+                  ),
+                ],
               ),
-            ],
+            ),
+            body: TabBarView(
+              children: [
+                Center(
+                  child: Text('Home'),
+                ),
+                Center(
+                  child: Text('Search and Explore'),
+                ),
+                Center(
+                  child: Text('All notifications will be here'),
+                ),
+                Center(
+                  child: Text('My Account'),
+                ),
+              ],
+            ),
           ),
         ),
+        theme: ThemeData.dark(),
       ),
     );
-  }
-}
