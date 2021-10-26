@@ -1,11 +1,29 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(
       MaterialApp(
         home: Scaffold(
-          appBar: AppBar(
-            title: Text('K3519010 - Project Name'),
-            backgroundColor: Colors.grey.shade700,
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(200),
+            child: AppBar(
+              backgroundColor: Colors.grey.shade700,
+              flexibleSpace: Align(
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  margin: EdgeInsets.all(20),
+                  child: Text(
+                    'K3519010 - PreferredSized AppBar',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ),
           body: MyApp(),
           backgroundColor: Colors.grey.shade900,
