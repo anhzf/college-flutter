@@ -26,7 +26,6 @@ class Converter {
 
     if (unitFrom != null && unitTo != null) {
       final x = formulas[unitFrom.toString()];
-      print([value, unitFrom, unitTo, x]);
 
       if (x != null) {
         final multiplier = x[unitTo];
