@@ -135,6 +135,7 @@ class _MyAppState extends State<MyApp> {
             gapY,
             Text(
               resultMsg,
+              textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline6,
             )
           ],
