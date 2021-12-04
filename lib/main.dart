@@ -1,49 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() => runApp(
-      MaterialApp(
-        home: MyApp(),
-        theme: ThemeData.dark(),
-      ),
-    );
+import 'pages/movie_list.dart';
 
-class MainLayout extends StatelessWidget {
-  const MainLayout({Key? key, required this.child}) : super(key: key);
+Future main() async {
+  await dotenv.load();
 
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('K3519010 - Project Name'),
-      ),
-      body: child,
-    );
-  }
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext ctx) {
-    return MainLayout(
-      child: Center(
-        child: ElevatedButton(
-          child: Text('Klik'),
-          onPressed: () => showDialog<String>(
-            context: ctx,
-            builder: (BuildContext ctx) => AlertDialog(
-              content: Text('asdadasd'),
-              actions: [
-                TextButton(
-                  child: Text('Tutup'),
-                  onPressed: () => Navigator.of(ctx).pop(),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+  runApp(
+    MaterialApp(
+      theme: ThemeData.dark(),
+      home: const MovieList(),
+      debugShowCheckedModeBanner: false,
+    ),
+  );
 }
